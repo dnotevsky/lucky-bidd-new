@@ -1,0 +1,8 @@
+{
+  "name": "lucky-bidd",
+  "app_id": "b9e81ea5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

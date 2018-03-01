@@ -1,0 +1,53 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+
+  <div class="logo-block">
+    <img src="assets/img/logo.png" alt="">
+    <p>LuckyBidd</p>
+  </div>
+
+  <form (submit)="doLogin()">
+    <p class="login-text">Войдите под своим аккаунтом на портале поставщиков</p>
+
+    <ion-list>
+
+      <ion-item>
+        <!-- <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label> -->
+        <ion-input class="login-input" type="email" [(ngModel)]="account.email" name="email" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <!--
+      Want to use a Username instead of an Email? Here you go:
+
+      <ion-item>
+        <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+      -->
+
+      <ion-item>
+        <!-- <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label> -->
+        <ion-input class="login-input" type="password" [(ngModel)]="account.password" name="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+      <div>
+        <button class="login-button" ion-button color="primary" block><!-- {{ 'LOGIN_BUTTON' | translate }} --> Войти</button>
+      </div>
+
+    </ion-list>
+  </form>
+
+  <ion-item class="loader" *ngIf="showLoader">
+    <i class="fa fa-spinner"></i>
+  </ion-item>
+
+</ion-content>
+    

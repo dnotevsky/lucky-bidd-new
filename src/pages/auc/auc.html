@@ -1,0 +1,186 @@
+<ion-content>
+
+  <ion-item class="cover">
+
+    <ion-header>
+      <ion-navbar>       
+      </ion-navbar>
+    </ion-header>
+
+    
+    <ion-item class="status">   
+        <!--span class="status-run" *ngIf="isActiveAuction && isPart">Участвую</span>
+        <span class="status-end" *ngIf="!isActiveAuction">Завершен</span--> 
+    </ion-item>
+
+
+    <ion-item class="title">
+      <p class="text">Закупка продукции:</p>
+      <p class="name">{{ name }}</p>
+    </ion-item>
+
+    <ion-item class="progress-bar">
+      <p class="text">До окончания аукциона <span class="time">{{ endTimeRemainingFormatted }}</span></p>
+      <div class="truck">
+        <div class="bar" [ngStyle]="{'width': barWidth + '%'}"></div>
+      </div>
+    </ion-item>
+
+    <ion-item class="auc-winner" *ngIf="!isActiveAuction">
+        <div class="auc-winner_text">
+          <span>
+            Победитель аукциона
+            <span>{{ lastBetSupplierName }}</span>
+          </span>
+        </div>
+    </ion-item>
+
+
+    <ion-item class="price-block">
+      <table>
+        <tr>
+          <td class="start-price">
+            <p class="text">Начальная цена</p>
+            <p class="price">{{ startCost }} ₽</p>
+          </td>
+          <td class="now-price">
+            <p class="text">Текущая цена</p>
+            <p class="price" *ngIf="lastBetCost !== null">{{ lastBetCost }} ₽</p>
+            <p class="price" *ngIf="lastBetCost == null">Ставок не было</p>
+          </td>
+        </tr>
+        <tr *ngIf="isPart">
+          <td class="start-price" style="padding-top: 15px;">
+            <p class="text">Ваша минимальная ставка</p>
+            <p class="price">{{ minCost }} ₽</p>
+          </td>
+          <!--td class="now-price">
+            <p class="text"></p>
+            <p class="price">
+              <ion-badge
+                (click)="showMinCostDialog = true"
+                *ngIf="isActiveAuction && isPart"
+                >Изменить ставку</ion-badge>
+            </p>
+          </td-->
+        </tr>
+      </table>
+    </ion-item>
+  </ion-item>
+
+  <ion-item class="refuse-auc"
+            (click)="refuseAuction()">
+    <a href="" onclick="return false;"
+               *ngIf="isActiveAuction && isPart">Отказаться от аукциона</a>
+  </ion-item>
+
+
+  <ion-card>
+
+    <ion-card-header>
+      Заказчик
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="text">
+        {{ companyName }}
+      </p>
+
+      <ion-item class="delivery">
+        <p class="text">
+          <span class="truck"><span class="ti-truck"></span></span>
+          Срок поставки — {{ maxDays }} дней
+        </p>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+  <ion-card class="auc-project" style="margin-bottom: 155px !important">
+
+    <ion-card-header>
+      Проект контракта и техзадание
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p class="text">
+        {{ supplyDescription }}
+      </p>
+
+      <ion-item class="project" *ngIf="projectDescriptionLink !== null">
+        <span class="link"><span class="ti-link"></span></span>
+        <a href="" (click)="openTaskSpecificationFile()" class="text">Проект контракта</a>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-item class="tip"
+            (click)="showMinCostDialog = true"
+            *ngIf="isActiveAuction && !isPart">
+    <p class="text">
+      <span class="card"><span class="ti-credit-card"></span></span>
+      <span class="tip-text">Участвовать в аукционе</span>
+      <a href="" onclick="return false;" class="tip-link"><span class="ti-angle-right"></span></a>
+    </p>
+  </ion-item>
+
+  <ion-item class="tip change-rate"
+            (click)="showMinCostDialog = true"
+            *ngIf="isActiveAuction && isPart">
+    <p class="text">
+      <span class="card"><span class="ti-credit-card"></span></span>
+      <span class="tip-text">Изменить ставку</span>
+      <a href="" onclick="return false;" class="tip-link"><span class="ti-angle-right"></span></a>
+    </p>
+  </ion-item>
+
+  <ion-item class="tip form-offers">
+    <p class="text">
+      <span class="card"><span class="ti-credit-card"></span></span>
+      <span class="tip-text">Сформировать оферты для Госзаказчика</span>
+      <a href="#" class="tip-link"><span class="ti-angle-right"></span></a>
+    </p>
+  </ion-item>
+
+  <ion-card class="auc-modal" *ngIf="showMinCostDialog">
+    <div class="auc-modal_inner">
+      
+      <ion-card-header (click)="showMinCostDialog = false">
+        Укажите вашу минимальную ставку
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item class="auc-modal_rate">
+          <ion-input [(ngModel)]="minCost" type="text" placeholder="Введите вашу ставку..."></ion-input>
+        </ion-item>
+
+        <!--ion-item class="auc-modal_chance">
+          <div class="chance">
+            <span class="chance-title">Вероятность выйгрыша составит</span>
+            <span class="chance-amount">70%</span>
+          </div>
+        </ion-item-->
+
+        <button ion-button block (click)="acceptMinCost()">Принять ставку</button>
+
+      </ion-card-content>
+
+    </div>
+  </ion-card>
+
+
+<!--   <ion-tabs>
+  <ion-tab [root]="tab1" tabTitle="Новые"></ion-tab>
+  <ion-tab [root]="tab2" tabTitle="Учавствую"></ion-tab>
+  <ion-tab [root]="tab3" tabTitle="Выиграл"></ion-tab>
+  <ion-tab [root]="tab4" tabTitle="Проиграл"></ion-tab>
+  <ion-tab [root]="tab5" tabTitle="Профиль"></ion-tab>
+</ion-tabs> -->
+
+</ion-content>
+

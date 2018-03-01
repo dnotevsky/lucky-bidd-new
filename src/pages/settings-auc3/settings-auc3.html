@@ -1,0 +1,109 @@
+<ion-content>
+
+  <ion-item class="cover">
+
+    <ion-header>
+      <ion-navbar>  
+      	<ion-title>Настройте свои аукционы</ion-title>     
+      </ion-navbar>
+    </ion-header>
+
+    <ion-item class="buttons">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <button><span class="icon ti-package"></span><span class="text">Товары</span></button>
+          </ion-col>
+
+          <ion-col col-4>
+            <button><span class="icon ti-notepad"></span><span class="text">Услуги</span></button>
+          </ion-col>
+
+          <ion-col col-4>
+            <button><span class="icon ti-briefcase"></span><span class="text">Работы</span></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="search-block">
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Поиск"></ion-searchbar>
+    </ion-item>
+
+  </ion-item>
+
+
+  <ion-card>
+
+    <ion-card-content>
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Строительство<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Капитальный ремонт<a href="#" class='ti-angle-right rotate-bottom'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+      <ion-list class="sublist">
+        <ion-item>
+          <ion-label>Капитальный ремонт здания и стро
+            <a href="" class="sett-item_options">
+              <span class="sett-round"></span>
+              <span class="sett-round"></span>
+              <span class="sett-round"></span>
+            </a>
+          </ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт здания<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт строений<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт насаждений<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox checked></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт парков<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт территорий<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт транспорта<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Капитальный ремонт оборудования<a href="#" class='ti-angle-right'></a></ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list> <!-- sublist -->
+
+    </ion-list> <!-- list -->
+    
+      <ion-item class="selected-categories">
+    		<ion-label>Выбранные категории: 2 <a href="" class='ti-angle-right'></a></ion-label>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+

@@ -1,0 +1,203 @@
+page-messages-dialogs {
+
+	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios,
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+		border-color: transparent !important;
+	}
+
+	ion-header {
+
+		.toolbar-ios {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		.back-button {
+			display: block;
+		}
+
+		ion-title {
+
+			.toolbar-title {
+
+				left: -5px !important;
+			}
+		}
+
+		ion-buttons {
+
+			.more {
+				position: relative;
+				top: 3px;
+
+				&.bar-button-ios {
+					top: -3px;
+				}
+
+				&::before {
+					content: "\e6e2";
+					@include themify;
+					color: #313D49;
+					font-size: 1rem;
+				}
+			}
+		}
+	}	
+
+	ion-content {
+
+		ion-list {
+			margin-bottom: 0 !important;
+			padding: 15px !important;
+			height: 100%;
+		    justify-content: flex-end;
+		    display: flex;
+		    flex-direction: column;
+
+			ion-item {
+				@include deleteItemPaddingAndBorder;
+			}
+
+			ion-item {
+				margin-bottom: 15px !important;
+				min-height: auto !important;
+				background: transparent !important;
+				padding-right: 20px !important;
+
+				.item-img {
+					margin-right: 6px;
+					display: inline-block;
+					float: left;
+					position: relative;
+					width: 30px;
+					height: 30px;
+
+					img {
+						border-radius: 50%;
+						width: 30px;
+						display: inline-block;
+						margin-top: 3px;
+					}
+				}
+
+				a {
+					text-decoration: none;
+				}
+
+				div[ion-label] {
+					margin-left: 30px + 6px;
+
+					.text {
+						display: inline-block;
+						border-radius: 6px;
+						background: #E8EFF4;
+						padding: 11px 15px 10px;
+						color: $light-text;
+						font-size: 1rem;
+						line-height: 1.25;
+					}
+				}	
+
+				&.my-message {
+					padding-left: 20px !important;
+					padding-right: 0 !important;
+
+					div[ion-label] {
+						margin-left: 28px !important;
+
+						.text {
+							background: $second-bg-color;
+							color: $bg-color;
+						}
+
+						.satus {
+							margin-top: 4px;
+							margin-right: 3px;
+							text-align: right;
+							color: $auc-text;
+							font-size: .8125rem;
+							line-height: 1.23;
+						}
+					}
+				}
+
+				&.typing {
+					margin-bottom: 0 !important;
+					padding-right: 0 !important;
+					font-size: 0;
+
+					ion-icon {
+						float: left;
+						margin-right: 5px;
+						color: #AEB7C8;
+						font-size: .6875rem;
+						line-height: 1;
+					}
+
+					div[ion-label] {
+						margin-left: calc(.6875rem + 5px) !important;
+
+						.text {
+							background: transparent;
+							color: $auc-text;
+							font-size: .8125rem;
+							line-height: 1.23;
+							padding: 0 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ion-footer {
+
+		.message-input {
+
+			& {
+				@include deleteItemPaddingAndBorder;
+			}
+
+			& {
+				background: transparent !important;
+				min-height: auto !important;
+				padding: 0 22px 22px 22px !important;
+
+				.item-inner {
+					height: 50px;
+					border-radius: 5px;
+					background: $bg-color;
+					box-shadow: 0px 2px 3px 0 rgba(83, 88, 95, 0.0869);
+
+					.input-wrapper {
+
+						ion-input {
+
+							input {
+								width: 100%;
+								padding: 0 15px !important;
+								color: $auc-text;
+								font-size: 1rem;
+								line-height: 1.25;
+								@include placeholder($auc-text);
+							}
+						}
+					}
+
+					.send {
+						background: transparent;
+
+						&::before {
+							display: inline-block;
+							content: "\e62c";
+							@include themify;
+							color: $second-bg-color;
+							font-size: 1.375rem;
+							transform: rotate(135deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}

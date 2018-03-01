@@ -1,0 +1,550 @@
+page-settings-auc1 {
+	font-family: "Source Sans Pro" !important;
+
+	.toolbar-background,
+	ion-item {
+		background: transparent !important;
+	}
+
+	.scroll-content {
+		padding: 0 18px;
+		background-color: #fff;
+	}
+
+	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios,
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+		border-color: transparent !important;
+	}
+
+	.searchbar-ios {
+		background: transparent !important;
+		padding: 0 !important;
+		border: none !important;
+		min-height: auto !important;
+	}
+
+	.cover {
+		@include deleteItemPaddingAndBorder;
+	}
+
+	.cover {
+		padding: 0 22px 29px !important;
+		margin-bottom: 0 !important;
+	}
+
+	.cover ion-header ion-icon::after {
+		content: "";
+	}
+
+	ion-header {
+
+		.toolbar-md {
+			.title-md {
+				margin-bottom: 0;
+				.toolbar-title {
+					color: $bg-color !important;
+				}
+			}
+		}  
+
+		ion-title {
+
+			.toolbar-title {
+				color: $bg-color !important;
+			} 
+		}
+	}
+
+	.search-block {
+		@include deleteItemPaddingAndBorder;
+		min-height: auto;
+
+		ion-searchbar {
+			width: 100%;
+			border-radius: 5px;
+
+			.searchbar-search-icon {
+				background: none;
+				position: relative;
+				left: 15px !important;
+				top: 11px !important;
+
+				&::before {
+					position: absolute;
+					left: -1px;
+					bottom: -16px;
+					content: "\e610";
+					@include themify;
+					color: #AEB7C8;
+					font-size: 1rem;
+				}
+			}
+
+			.searchbar-clear-icon {
+				background-position-y: 30px;
+			}
+
+			.searchbar-input {
+				font-size: 1rem;
+				line-height: 1.25;
+				padding: 0 20px 0 40px;
+				min-height: 40px;
+				color: $auc-text;
+				box-shadow: 0px 3px 5px rgba(83, 88, 95, 0.12);
+				border-radius: 5px;
+
+				@include placeholder($auc-text);
+			}
+		}
+		.searchbar-md {
+			padding: 0;
+		}
+	}
+
+	.searchbar-ios.searchbar-left-aligned .searchbar-search-icon {
+		top: 15px !important;
+		left: 15px !important;
+	}
+
+	.searchbar-ios.searchbar-left-aligned .searchbar-input {
+		padding-left: 40px !important;
+	}
+
+	.buttons {
+		margin-top: 55px;
+		@include deleteItemPaddingAndBorder;
+
+		ion-grid {
+
+			ion-row {
+
+				ion-col {
+
+					button {
+						width: 100%;
+						background: transparent;
+						text-align: center;
+
+						.icon {
+							margin-bottom: 11px;
+							height: 59px;
+							width: 59px;
+							border-radius: 50%;
+							background: $bg-color;
+							display: inline-block;
+							text-align: center;
+							line-height: 59px;
+							color: #313D49;
+							font-size: 1.25rem;
+						}
+
+						.text {
+							display: block;
+							color: #F5F7FB;
+							font-size: .875rem;
+							line-height: 1.28;
+						}
+
+						.selected {
+							color: $second-bg-color !important;
+						}
+					}
+				}
+			}
+		}
+
+		&.item-ios {
+			margin-top: 30px !important;
+		}
+	}
+	.settings-list {
+		ion-item {
+			float: left;
+			width: 50%;
+			padding: 0 10px;
+			min-height: 130px;
+			.item-inner {
+				padding-right: 0 !important;
+			}
+			ion-label {
+				margin: 0;
+			}
+			p {
+				font-size: 13px;
+				color: #36424E;
+				text-align: center;
+				&::before {
+					content: "";
+					width: 100%;
+					height: 52px;
+					background-image: url("../assets/img/settings-auc1/1injenernayi.png");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					display: block;
+					margin-bottom: 10px;
+				}
+				@media screen and (max-width: 400px) {
+					font-size: 12px;
+				}
+			}
+			&.sett-proj p::before {
+				background-image: url("../assets/img/settings-auc1/2proektnayi.png");
+			}
+			&.sett-build p::before {
+				background-image: url("../assets/img/settings-auc1/3stroitelstvo.png");
+			}
+			&.sett-recon p::before {
+				background-image: url("../assets/img/settings-auc1/4rekonstrukcia.png");
+			}
+			&.sett-cap-rep p::before {
+				background-image: url("../assets/img/settings-auc1/5kapremont.png");
+			}
+			&.sett-curr-rep p::before {
+				background-image: url("../assets/img/settings-auc1/6tekuchiyremont.png");
+			}
+			&.sett-restav p::before {
+				background-image: url("../assets/img/settings-auc1/7RESTAVRACIA.png");
+			}
+			&.sett-natur p::before {
+				background-image: url("../assets/img/settings-auc1/8PRIRODOOHRANNA.png");
+			}
+			&.sett-topog p::before {
+				background-image: url("../assets/img/settings-auc1/9topografrabot.png");
+			}
+			&.sett-map p::before {
+				background-image: url("../assets/img/settings-auc1/10kartografrabot.png");
+			}
+			&.sett-inst p::before {
+				background-image: url("../assets/img/settings-auc1/11montazsborka.png");
+			}
+			&.sett-exp p::before {
+				background-image: url("../assets/img/settings-auc1/12opytnokonsrukt.png");
+			}
+			&.sett-res p::before {
+				background-image: url("../assets/img/settings-auc1/13Iissledovania.png");
+			}
+			&.sett-it p::before {
+				background-image: url("../assets/img/settings-auc1/14razrabotkait.png");
+			}
+			&.sett-video p::before {
+				background-image: url("../assets/img/settings-auc1/15sozdaniekino.png");
+			}
+			&.sett-paint p::before {
+				background-image: url("../assets/img/settings-auc1/16rabotzivopis.png");
+			}
+			&.sett-furn p::before {
+				background-image: url("../assets/img/settings-auc1/17izgotovmebeli.png");
+			}
+			&.sett-med p::before {
+				background-image: url("../assets/img/settings-auc1/18meduslugi.png");
+			}
+			&.sett-polyg p::before {
+				background-image: url("../assets/img/settings-auc1/19poligrafia.png");
+			}
+			&.sett-print p::before {
+				background-image: url("../assets/img/settings-auc1/20pechati.png");
+			}
+			&.sett-textile p::before {
+				background-image: url("../assets/img/settings-auc1/21tekstil.png");
+			}
+			&.sett-reward p::before {
+				background-image: url("../assets/img/settings-auc1/22nagrady.png");
+			}
+			&.sett-inter p::before {
+				background-image: url("../assets/img/settings-auc1/23isdeliainterier.png");
+			}
+			&.sett-demol p::before {
+				background-image: url("../assets/img/settings-auc1/24snoszdanii.png");
+			}
+			&.sett-med-serv p::before {
+				background-image: url("../assets/img/settings-auc1/1meduslugi.png");
+			}
+			&.sett-soc p::before {
+				background-image: url("../assets/img/settings-auc1/2patronaz.png");
+			}
+			&.sett-edu p::before {
+				background-image: url("../assets/img/settings-auc1/3obrazovatuslugi.png");
+			}
+			&.sett-soc-adap p::before {
+				background-image: url("../assets/img/settings-auc1/4socadaptacia.png");
+			}
+			&.sett-food p::before {
+				background-image: url("../assets/img/settings-auc1/5organpitania.png");
+			}
+			&.sett-build-serv p::before {
+				background-image: url("../assets/img/settings-auc1/6stroituslugi.png");
+			}
+			&.sett-roads p::before {
+				background-image: url("../assets/img/settings-auc1/7obsluzivaniezdanii.png");
+			}
+			&.sett-rub p::before {
+				background-image: url("../assets/img/settings-auc1/8vuvozmusora.png");
+			}
+			&.sett-secur p::before {
+				background-image: url("../assets/img/settings-auc1/9ohranaipozhar.png");
+			}
+			&.sett-com p::before {
+				background-image: url("../assets/img/settings-auc1/10komunaluslugi.png");
+			}
+			&.sett-telecom p::before {
+				background-image: url("../assets/img/settings-auc1/11sviaz.png");
+			}
+			&.sett-info p::before {
+				background-image: url("../assets/img/settings-auc1/12it.png");
+			}
+			&.sett-insur p::before {
+				background-image: url("../assets/img/settings-auc1/13srahovanie.png");
+			}
+			&.sett-adver p::before {
+				background-image: url("../assets/img/settings-auc1/14reklama.png");
+			}
+			&.sett-sanat p::before {
+				background-image: url("../assets/img/settings-auc1/15sanatorii.png");
+			}
+			&.sett-events p::before {
+				background-image: url("../assets/img/settings-auc1/16meropriatia.png");
+			}
+			&.sett-storage p::before {
+				background-image: url("../assets/img/settings-auc1/17hranenie.png");
+			}
+			&.sett-rit p::before {
+				background-image: url("../assets/img/settings-auc1/18ritualuslugi.png");
+			}
+			&.sett-consal p::before {
+				background-image: url("../assets/img/settings-auc1/19consalting.png");
+			}
+			&.sett-estim p::before {
+				background-image: url("../assets/img/settings-auc1/20ocenochnaya.png");
+			}
+			&.sett-fin p::before {
+				background-image: url("../assets/img/settings-auc1/21financ.png");
+			}
+			&.sett-notar p::before {
+				background-image: url("../assets/img/settings-auc1/22notarius.png");
+			}
+			&.sett-anim p::before {
+				background-image: url("../assets/img/settings-auc1/23uslugizgivotnye.png");
+			}
+			&.sett-exper p::before {
+				background-image: url("../assets/img/settings-auc1/24ekspertiza.png");
+			}
+			&.sett-rent p::before {
+				background-image: url("../assets/img/settings-auc1/25arenda.png");
+			}
+			&.sett-ship p::before {
+				background-image: url("../assets/img/settings-auc1/26perevozpassagir.png");
+			}
+			&.sett-repr p::before {
+				background-image: url("../assets/img/settings-auc1/27predstavit.png");
+			}
+			&.sett-clean p::before {
+				background-image: url("../assets/img/settings-auc1/28clining.png");
+			}
+			&.sett-domes p::before {
+				background-image: url("../assets/img/settings-auc1/29byt.png");
+			}
+			&.sett-rep-serv p::before {
+				background-image: url("../assets/img/settings-auc1/30remont.png");
+			}
+		}
+	}
+	
+	ion-card {
+		margin: 0 !important;
+		width: 100% !important;
+		background: transparent !important;
+		box-shadow: none !important;
+
+		ion-card-header {
+			margin: 0 0 10px;
+			padding: 0 !important;
+			text-transform: uppercase;
+			color: $auc-text !important;
+			font-size: .8125rem !important;
+			line-height: 1.23;
+		}
+
+		ion-card-content {
+			background: $bg-color;
+			border-radius: 5px;
+			padding: 0 !important;
+
+			ion-list {
+				.category {
+					z-index: 1000;
+				}
+
+				ion-item {
+					@include deleteItemPaddingAndBorder;
+					min-height: auto !important;
+
+					ion-checkbox {
+						margin: 0 10px 0 0 !important;
+						align-self: stretch;
+						position: relative;
+
+						.checkbox-icon {
+							position: absolute;
+							top: 20px;
+							border: none !important;
+							height: 15px !important;
+							width: 15px !important;
+							border-radius: 3px !important;
+							background: #E8EFF4 !important;
+
+							&.checkbox-checked {
+								background: $second-bg-color !important;
+								text-align: center;
+								position: relative;
+
+								&::before {
+									position: absolute;
+									left: 3px;
+									top: 4px;
+									content: "\e64c";
+									@include themify;
+									color: $bg-color;
+									font-size: 8px;
+								}
+							}
+
+							.checkbox-inner {
+								border: none !important;
+							}
+						}
+					}
+
+					ion-label {
+						display: -webkit-flex;
+						display: -moz-flex;
+						display: -ms-flex;
+						display: -o-flex;
+						display: flex;
+						justify-content: space-between;
+						color: $light-text;
+						font-size: 1rem;
+						line-height: 1.25;
+						border-bottom: 1px solid #E8EFF4;
+						padding: 18px 0 18px 0;
+
+						a {
+							position: absolute;
+							margin-right: 15px;
+							text-decoration: none;
+							color: #219AF5;
+							font-size: .77rem;
+							top: 34px;
+							right: 5px;
+							transform: rotate(-90deg);
+							&::before {
+								position: absolute;
+								top: 4px;
+							}
+						}
+					}
+				}
+				&.sublist {
+					padding-left: 9px;
+					ion-item {
+						ion-checkbox {
+							margin: 0 10px 0 0 !important;
+							align-self: stretch;
+							position: relative;
+
+							.checkbox-icon {
+								top: 15px;
+							}
+						}
+						ion-label {
+							padding: 13px 0 13px 0;
+							a {
+								color: #AEB7C8;
+								transform: rotate(0);
+								top: 18px;
+							}
+						}
+					}					
+				}
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 50px !important;
+		}
+	}
+
+	.tip {
+		background: $bg-color !important;
+		@include deleteItemPaddingAndBorder;
+		height: 50px;
+		box-shadow: 0px -6px 10px rgba(49, 61, 73, 0.05);
+
+		.text {
+			color: $light-text;
+
+			.text-span {
+				margin-left: -20px;
+			}
+
+			ion-badge {
+				margin-right: -30px;
+				border-radius: 5px;
+				background: rgba(174, 183, 200, .1);
+				color: $light-text;
+				font-size: 1rem;
+				line-height: 1.25;
+				font-weight: normal;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+	.selected-categories {
+		position: fixed;
+		bottom: 50px;
+		left: 0;
+		background-color: #32A0F4 !important;
+		padding-left: 18px;
+		min-height: 50px;
+		ion-label {
+			color: #fff;
+			font-size: 16px;
+			a {
+				color: #fff;
+				text-decoration: none;
+				position: absolute;
+				right: 22px;
+				top: 18px;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.sett-item_options {
+		position: absolute;
+		width: 39px;
+		height: 15px;
+		border-radius: 19.5px;
+		background-color: #E9E9E9;
+		top: 0;
+		right: 0;
+		margin-right: 0;
+		.sett-round {
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			top: 50%;
+			margin-top: -2px;
+			left: 50%;
+			margin-left: -2px;
+			border-radius: 50%;
+			background-color: #818181;
+			&:first-child {
+				margin-left: -10px;
+			}
+			&:last-child {
+				margin-left: 6px;
+			}
+		}
+	}
+}

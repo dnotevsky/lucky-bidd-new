@@ -1,0 +1,115 @@
+page-pay-account-1 {
+
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+		border-bottom: 0.55px solid transparent !important;
+	}
+
+	ion-header {
+
+		.back-button {
+			display: block;
+		}
+	}
+
+	ion-card {
+		margin: 25px 0 68px + 50px + 50px !important;
+		width: 100% !important;
+		background: transparent !important;
+		box-shadow: none !important;
+
+		ion-card-header {
+			margin: 0 0 10px;
+			padding: 0 !important;
+			text-transform: uppercase;
+			color: $auc-text !important;
+			font-size: .8125rem !important;
+			line-height: 1.23;
+		}
+
+		ion-card-content {
+			background: url("../assets/img/pay-account/pay-auc-bg.png") top left repeat-x;
+			background-size: auto 100%;
+			border-radius: 5px;
+			padding: 20px 16px 35px !important;
+
+			ion-label {
+				padding-left: 3px;
+
+				&:last-of-type {
+					text-align: right;
+					padding-left: 0px;
+					padding-right: 3px;
+				}
+			}
+
+			ion-list {
+				padding: 10px 0 !important;
+
+				&:not(:last-of-type) {
+					border-bottom: 2px dashed $content-bg;
+				}
+
+				&:nth-of-type(2) {
+					border-top: 2px dashed $content-bg;
+				}
+
+				&:first-of-type {
+					border-top: 5px solid $content-bg;
+					border-image: url("../assets/img/pay-account/pay-account-stars.png") 5 0 0 0 round;
+				}
+
+				ion-item {
+					@include deleteItemPaddingAndBorder;
+					margin: 0 0 3px !important;
+					min-height: auto !important;
+
+					ion-label {	
+						font-size: .8125rem;
+						line-height: 1.23;
+						color: $auc-text;
+
+						.auc-link {
+							font-size: 1rem;
+							line-height: 1.25;
+							color: #1E85F2;
+							text-decoration: underline;
+						}
+
+						&.price {
+							color: $light-text;
+							font-size: 1rem;
+							line-height: 1.25;
+						}
+					}
+				}
+			}
+
+			.pay-total {
+				@include deleteItemPaddingAndBorder;
+			}
+
+			.pay-total {
+				min-height: auto !important;
+				margin: 21px 0 0 !important;
+				padding: 10px 0 !important;
+				border-top: 5px solid $content-bg;
+				border-bottom: 5px solid $content-bg;
+				border-image: url("../assets/img/pay-account/pay-account-stars.png") 5 0 5 0 round;
+
+				ion-label {
+					color: $light-text;
+					font-size: 1.125rem;
+					line-height: 1.27;
+				}
+			}
+			
+		}
+	}
+
+	.tip {
+		@include deleteItemPaddingAndBorder;
+		text-align: center;
+		height: 50px;
+	}
+
+}

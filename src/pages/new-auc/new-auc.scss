@@ -1,0 +1,61 @@
+page-new-auc {
+
+	ion-header {
+
+		.back-button {
+			display: block;
+		}
+	}
+
+	ion-content {
+
+		.scroll-content {
+			padding: 10px 22px 60px;
+		}
+
+		.card {
+			background: $bg-color;
+			box-shadow: 0px 2px 3px rgba(83, 88, 95, 0.14);
+			border-radius: 5px;
+			padding: 20px;
+
+			ion-card-header,
+			ion-card-content {
+				padding: 0 !important;
+			}
+
+			.text {
+				margin: 0 0 3px;
+				color: #9EA8BC;
+				font-size: .875rem;
+				line-height: 1.28;
+			}
+
+			.name {
+				margin: 0 0 15px;
+				color: $light-text;
+				font-size: 1.125rem;
+				line-height: 1.27;
+				white-space: normal;
+			}
+
+			table {
+				width: 100%;
+
+				.value {
+					color: $light-text;
+					font-size: 1rem;
+					line-height: 1.25;
+				}
+
+				.price {
+
+					.value {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let item of currentItems" (click)="openItem(item)">
+
+    <ion-card-header>
+      <p class="text">
+        Закупка продукции:
+        <span class="status-badge" *ngIf="item.status === null">New</span>
+        <span class="status-badge status-badge-danger" *ngIf="item.status === 'rejected'">Отклонена</span>
+      </p>
+      <p class="name">
+          {{ item.zakupkiObject.name }}
+      </p>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table>
+        <tr>
+          <td class="price">
+            <p class="text">Начальная цена</p>
+            <p class="value">{{ item.zakupkiObject.startCost }} р.</p>
+          </td>
+          <td class="date">
+            <p class="text">Дата окончания</p>
+            <p class="value">{{ item.zakupkiObject.endDateFormatted }}</p>
+          </td>
+        </tr>
+      </table>
+    </ion-card-content>
+
+  </ion-card>
+
+  <!-- <ion-list>
+    <ion-item-sliding *ngFor="let item of currentItems">
+      <button ion-item (click)="openItem(item)">
+        <ion-card>
+
+          <ion-card-header>
+            <p class="text">
+              Закупка продукции:
+            </p>
+            <p class="name">
+                {{ item.zakupkiObject.name }}
+            </p>
+          </ion-card-header>
+
+          <ion-card-content>
+            <table>
+              <tr>
+                <td class="price">
+                  <p class="text">Начальная цена</p>
+                  <p class="value">{{ item.zakupkiObject.startCost }} р.</p>
+                </td>
+                <td class="date">
+                  <p class="text">Дата окончания</p>
+                  <p class="value">{{ item.zakupkiObject.endDateFormatted }}</p>
+                </td>
+              </tr>
+            </table>
+          </ion-card-content>
+
+        </ion-card>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteItem(item)">
+          {{ 'DELETE_BUTTON' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+</ion-content>

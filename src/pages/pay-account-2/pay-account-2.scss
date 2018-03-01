@@ -1,0 +1,253 @@
+page-pay-account-2 {
+
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+		border-bottom: 0.55px solid transparent !important;
+	}
+
+	.scroll-content {
+		padding-top: 15px;
+	}
+
+	ion-header {
+
+		.back-button {
+			display: block;
+		}
+	}
+
+	.pay-type {
+		ion-list-header {
+			min-height: auto !important;
+			border: none !important;
+			margin: 0 0 10px !important;
+			padding: 0 !important;
+			text-transform: uppercase !important;
+			color: $auc-text !important;
+			font-size: .8125rem !important;
+			line-height: 1.23 !important;
+			background: transparent !important;
+
+			ion-label {
+				margin: 0 !important;
+				font-size: .8125rem !important;
+			}
+		}
+
+		ion-grid {
+			padding: 0;
+
+			ion-item {
+				@include deleteItemPaddingAndBorder;
+				height: 130px;
+				border-radius: 5px;
+				box-shadow: 0px 6px 10px rgba(83, 88, 95, 0.09);
+				background: $bg-color;
+				text-align: center;
+				padding: 34px 30px 14px;
+				box-sizing: border-box;
+
+				&.item-radio-checked {
+					box-shadow: 0 0 0 2px $second-bg-color;
+				}
+
+				.item-inner {
+					position: relative;
+
+					ion-label {
+						display: -webkit-flex;
+						display: -moz-flex;
+						display: -ms-flex;
+						display: -o-flex;
+						display: flex;
+	    				flex-direction: column;
+	    				justify-content: space-around;
+	    				height: 100%;
+	    				padding: 30px 20px 14px;
+						box-sizing: border-box;
+						color: $light-text;
+						font-size: 1rem;
+						line-height: 1.25;
+
+						@media screen and (max-width: 374px) {
+							font-size: .85rem !important;
+						}
+
+						.icon {
+							display: inline-block;
+							font-size: 1.75rem;
+							color: $second-bg-color;
+
+							&.ti-layout-cta-right {
+								font-size: 2rem;
+							}
+						}
+					}
+
+					ion-radio {
+						position: absolute;
+					    top: 0;
+					    bottom: 0;
+					    left: 0;
+					    right: 0;
+					    margin: 0;
+
+					    .radio-icon {
+							position: absolute;
+							top: 7px;
+						    right: 7px;
+						    left: auto;
+						    margin: 0;
+						    height: 13px;
+						    width: 13px;
+						    border: none;
+						    border-radius: 50%;
+						    background: rgba(33, 154, 245, 0.15);
+						    opacity: 0;
+						    transition: .25s all;
+
+						    &.radio-checked {
+						    	opacity: 1;
+						    }
+
+						    .radio-inner {
+						    	position: relative;
+								background: transparent;
+								transform: none;
+								text-align: center;
+								left: auto;
+								top: auto;
+								width: 100%;
+								height: 100%;
+								border: none;
+								margin: 0;
+
+								&::before {
+									position: absolute;
+									top: 3px;
+									left: 3px;
+									@include themify;
+									content: "\e64c";
+									color: #219AF5;
+									font-size: 7px;
+								}
+							}
+					    }
+					}
+				}	
+			}
+		}
+	}
+
+	.pay-tip {
+		position: relative;
+		margin: 0;
+		color: $auc-text;
+		font-size: .8125rem;
+		line-height: 1.23;
+		padding-left: 8px + 17px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #E8EFF4;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: "\e697";
+			@include themify;
+			height: 17px;
+			width: 17px;
+			border-radius: 50%;
+			border: 1px solid #AEB7C8;
+			text-align: center;
+			line-height: 16px;
+			font-size: 10px;
+			box-sizing: border-box;
+		}
+	}
+
+
+	ion-card {
+		margin: 25px 0 !important;
+		width: 100% !important;
+		background: transparent !important;
+		box-shadow: none !important;
+
+		ion-card-header {
+			margin: 0 0 10px;
+			padding: 0 !important;
+			text-transform: uppercase;
+			color: $auc-text !important;
+			font-size: .8125rem !important;
+			line-height: 1.23;
+
+			@media screen and (max-width: 374px) {
+				overflow: visible !important;
+    			contain: none !important;
+    			white-space: normal !important;
+			}
+		}
+
+		ion-card-content {
+			background: $bg-color;
+			border-radius: 5px;
+			padding: 20px !important;
+
+			ion-item {
+				@include deleteItemPaddingAndBorder;
+				border-bottom: none !important;
+				box-shadow: none !important;
+
+				.pay-input {
+					margin-bottom: 15px;
+					height: 50px;
+					width: 100%;
+					border: 1px solid #E8EFF4;
+					border-radius: 5px;
+					padding: 0 12px;
+					color: $auc-text;
+					font-size: .97rem;
+					line-height: 1.25;
+
+					@media screen and (max-width: 374px) {
+						font-size: .79rem;
+					}
+
+					input {
+						@include placeholder($auc-text, .97rem, 1.25);
+						margin-left: 0;
+						margin-right: 0;
+						width: 100%;
+						height: calc(100% - 26px);
+
+						@media screen and (max-width: 374px) {
+							@include placeholder($auc-text, .79rem, 1.25);
+						}
+					}
+				}
+			}	
+		}
+	}	
+
+	.pay-ofert {
+		margin-top: 20px;
+		margin-bottom: 82px + 50px + 50px;
+		text-align: center;
+		color: $light-text;
+		font-size: .875rem;
+		line-height: 1.28;
+
+		a {
+			color: $light-text;
+			font-size: .875rem;
+			line-height: 1.28;
+			text-decoration: underline;
+		}
+	}
+
+	.tip {
+		@include deleteItemPaddingAndBorder;
+		text-align: center;
+		height: 50px;
+	}
+
+}

@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Настройка аккаунта</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<!--ion-list class="settings-title">
+		<h2>ОАО «Альфа Банк»</h2>
+	</ion-list>
+
+	<ion-list>
+	  <ion-list-header>
+	    Информация о компании
+	  </ion-list-header>
+
+	  <ion-item>
+	    <ion-input type="text" placeholder="Банк" value="ОАО «Альфа Банк»"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-input type="text" placeholder="ИНН"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-input type="text" placeholder="Ваша ниша на портале поставщиков"></ion-input>
+	  </ion-item>
+	</ion-list-->
+
+	<ion-list>
+	  <ion-list-header>
+	    Контакты для связи
+	  </ion-list-header>
+
+	  <ion-item>
+	    <ion-input [(ngModel)]="phone" type="text" placeholder="Телефон"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-input [(ngModel)]="email" type="text" placeholder="Email"></ion-input>
+	  </ion-item>
+	</ion-list>
+
+	<!--ion-list>
+	  <ion-list-header>
+	    Изменить пароль
+	  </ion-list-header>
+
+	  <ion-item>
+	    <ion-input type="password" placeholder="Новый пароль"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-input type="password" placeholder="Повторить пароль"></ion-input>
+	  </ion-item>
+	</ion-list-->
+
+	<ion-list class="fill-correct">
+		<p>Чтобы получать уведомления по аукционам и для связи в экстренных ситуациях заполните коррекно данные в полях</p>
+	</ion-list>
+
+	<button ion-button full (click)="saveChanges()">Сохранить изменения</button>
+
+<!-- <ion-tabs>
+    <ion-tab [root]="tab1" tabTitle="Новые"></ion-tab>
+    <ion-tab [root]="tab2" tabTitle="Учавствую"></ion-tab>
+    <ion-tab [root]="tab3" tabTitle="Выиграл"></ion-tab>
+    <ion-tab [root]="tab4" tabTitle="Проиграл"></ion-tab>
+    <ion-tab [root]="tab5" tabTitle="Профиль"></ion-tab>
+</ion-tabs> -->
+</ion-content>

@@ -1,0 +1,57 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Настройка уведомлений</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<ion-list>
+
+	  <ion-list-header>
+	    Уведомление через СМС
+	  </ion-list-header>
+
+	  <ion-item>
+	  	<ion-label>Новые аукционы</ion-label>
+		<ion-toggle [(ngModel)]="notifications.smsNewAuctions" (ionChange)="toggleChecked('smsNewAuctions', notifications.smsNewAuctions)"></ion-toggle>
+	  </ion-item>
+
+	  <ion-item>
+	  	<ion-label class="auc-item-win">Победа на аукционе</ion-label>
+		<ion-toggle [(ngModel)]="notifications.smsWinAuctions" (ionChange)="toggleChecked('smsWinAuctions', notifications.smsWinAuctions)"></ion-toggle>
+	  </ion-item>
+
+	</ion-list>
+
+	<ion-list>
+
+	  <ion-list-header>
+	    Фоновые уведомления на телефоне (Push)
+	  </ion-list-header>
+
+	  <ion-item>
+	  	<ion-label>Новые аукционы</ion-label>
+		<ion-toggle [(ngModel)]="notifications.pushNewAuctions" (ionChange)="toggleChecked('pushNewAuctions', notifications.pushNewAuctions)"></ion-toggle>
+	  </ion-item>
+
+	  <ion-item>
+	  	<ion-label class="auc-item-win">Победа на аукционе</ion-label>
+		<ion-toggle [(ngModel)]="notifications.pushWinAuctions" (ionChange)="toggleChecked('pushWinAuctions', notifications.pushWinAuctions)"></ion-toggle>
+	  </ion-item>
+
+	</ion-list>
+
+<!-- <ion-tabs>
+    <ion-tab [root]="tab1" tabTitle="Новые"></ion-tab>
+    <ion-tab [root]="tab2" tabTitle="Учавствую"></ion-tab>
+    <ion-tab [root]="tab3" tabTitle="Выиграл"></ion-tab>
+    <ion-tab [root]="tab4" tabTitle="Проиграл"></ion-tab>
+    <ion-tab [root]="tab5" tabTitle="Профиль"></ion-tab>
+</ion-tabs> -->
+
+</ion-content>

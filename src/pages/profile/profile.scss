@@ -1,0 +1,58 @@
+page-profile {
+	ion-header {
+		ion-title {
+			.toolbar-title {
+				left: 0 !important;
+				padding: 0;
+			}
+		}
+	}
+	ion-content {
+		.item-md {
+			float: left;
+			width: calc(50% - 11px);
+			margin: 5.5px;
+			padding: 0;
+			text-align: center;
+			min-height: 130px;
+			&:nth-child(1),
+			&:nth-child(2) {
+				margin-top: 15px;
+			}
+			.item-inner {
+				border-bottom: none !important;
+				padding: 0 !important;
+			}
+			ion-label {
+				margin: 0;
+			}
+			p {
+				font-size: 14px;
+				color: #252E39;
+				&::before {
+					content: "\e68c";
+					font-family: 'themify';
+					display: block;
+					font-size: 25px;
+					margin-bottom: 20px;
+					color: #1E85F2;
+				}
+			}
+			&.profile-notice p::before {
+				content: "\e64f";
+			}
+			&.profile-account p::before {
+				content: "\e602";
+			}
+			&.profile-chat p::before {
+				content: "\e643";
+			}
+			&.profile-pay p::before {
+				content: "\e6cd";
+			}
+			&.profile-support p::before {
+				content: "\e719";
+			}
+		}
+	}
+}

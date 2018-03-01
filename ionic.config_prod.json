@@ -1,0 +1,18 @@
+{
+  "name": "lucky-bidd",
+  "app_id": "b9e81ea5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://195.133.146.21:3000/api"
+    },
+    {
+      "path": "/login",
+      "proxyUrl": "http://195.133.146.21:3000/login"
+    }  
+  ]
+}

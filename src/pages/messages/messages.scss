@@ -1,0 +1,185 @@
+page-messages {
+
+	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios,
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+		border-color: transparent !important;
+	}
+
+	ion-header {
+
+		.toolbar-ios {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		.back-button {
+			display: block;
+		}
+
+		ion-title {
+
+			.toolbar-title {
+
+				left: -5px !important;
+			}
+		}
+
+		ion-buttons {
+
+			.search {
+				position: relative;
+				top: 3px;
+
+				&.bar-button-ios {
+					top: -3px;
+				}
+
+				&::before {
+					content: "\e610";
+					@include themify;
+					color: #313D49;
+					font-size: 1rem;
+				}
+			}
+		}
+	}	
+
+	ion-content {
+
+		.scroll-content {
+			padding-right: 0 !important;
+		}
+
+		ion-list {
+
+			ion-item {
+				@include deleteItemPaddingAndBorder;
+			}
+
+			ion-item {
+				min-height: auto !important;
+				background: transparent !important;
+				padding: 12px 0 0 !important;
+
+				.item-img {
+					margin-right: 13px;
+					float: left;
+					position: relative;
+					width: 50px;
+					height: 50px;
+
+					img {
+						border-radius: 50%;
+						width: 50px;
+					}
+				}
+
+				&.online {
+
+					.item-img {
+
+						&::before {
+							content: "";
+							position: absolute;
+							right: 2px;
+							bottom: 2px;
+							width: 6px;
+							height: 6px;
+							border-radius: 50%;
+							background: $second-bg-color;
+							border: 2px solid #fff;
+						}
+					}
+				}
+
+				a {
+					text-decoration: none;
+				}
+
+				ion-label {
+
+					.top {
+						position: relative;
+						margin: 0 0 3px;
+						padding-right: 20px;
+
+						.name {
+							font-size: 1rem;
+							line-height: 1.25;
+							color: $light-text;
+
+							@media screen and (max-width: 355px) {
+								font-size: .9rem;
+							}
+						}
+
+						.date {
+							position: absolute;
+							right: 20px;
+							bottom: 3px;
+							color: $auc-text;
+							font-size: .875rem;
+							line-height: 1.28;
+
+							@media screen and (max-width: 355px) {
+								font-size: .83rem;
+							}
+						}
+					}
+
+					.text {
+						margin-left: 50px + 13px;
+						padding-right: 20px;
+						padding-bottom: 9px;
+						color: $light-text;
+						font-size: .875rem;
+						line-height: 1.28;
+						border-bottom: 1px solid #E8EFF4;
+
+						@media screen and (max-width: 355px) {
+							font-size: .85rem;
+						}
+					}
+				}
+
+				&.group {
+
+					ion-label {
+
+						.text {
+							color: $auc-text;
+							font-size: .875rem;
+							line-height: 1.28;
+
+							.users {
+								float: right;
+								position: relative;
+								top: -5px;
+
+								div {
+									width: 25px !important;
+									display: inline-block;
+									height: 23px;
+									border-radius: 50%;
+									border: 2px solid #fff;
+
+									@for $i from 1 through 3 {
+
+										&:nth-of-type(#{$i}) {
+											background: url("../assets/img/messages/#{$i + 5}.png") center center no-repeat;
+											background-size: 23px;
+										}
+									}
+
+									&:not(:first-child) {
+										margin-left: -10px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,274 @@
+page-settings-auc {
+	.toolbar-background,
+	ion-item {
+		background: transparent !important;
+	}
+
+	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios,
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+		border-color: transparent !important;
+	}
+
+	.searchbar-ios {
+		background: transparent !important;
+		padding: 0 !important;
+		border: none !important;
+		min-height: auto !important;
+	}
+
+	.cover {
+		@include deleteItemPaddingAndBorder;
+	}
+
+	.cover {
+		padding: 0 22px 29px !important;
+		margin-bottom: 0 !important;
+	}
+
+	.cover ion-header ion-icon::after {
+		content: "";
+	}
+
+	ion-header {
+
+		.toolbar-md {
+			.title-md {
+				margin-bottom: 0;
+				.toolbar-title {
+					color: $bg-color !important;
+				}
+			}
+		}  
+
+		ion-title {
+
+			.toolbar-title {
+				color: $bg-color !important;
+			} 
+		}
+	}
+
+	.search-block {
+		margin-top: 45px;
+		@include deleteItemPaddingAndBorder;
+
+		ion-searchbar {
+			width: 100%;
+			border-radius: 5px;
+
+			.searchbar-search-icon {
+				background: none;
+				position: relative;
+				left: 15px !important;
+				top: 11px !important;
+
+				&::before {
+					position: absolute;
+					left: -1px;
+					bottom: -16px;
+					content: "\e610";
+					@include themify;
+					color: #AEB7C8;
+					font-size: 1rem;
+				}
+			}
+
+			.searchbar-clear-icon {
+				background-position-y: 30px;
+			}
+
+			.searchbar-input {
+				font-size: 1rem;
+				line-height: 1.25;
+				padding: 0 20px 0 40px;
+				min-height: 40px;
+				color: $auc-text;
+				box-shadow: 0px 3px 5px rgba(83, 88, 95, 0.12);
+				border-radius: 5px;
+
+				@include placeholder($auc-text);
+			}
+		}
+		.searchbar-md {
+			padding: 0;
+		}
+	}
+
+	.searchbar-ios.searchbar-left-aligned .searchbar-search-icon {
+		top: 15px !important;
+		left: 15px !important;
+	}
+
+	.searchbar-ios.searchbar-left-aligned .searchbar-input {
+		padding-left: 40px !important;
+	}
+
+	.buttons {
+		margin-top: 35px;
+		@include deleteItemPaddingAndBorder;
+
+		ion-grid {
+
+			ion-row {
+
+				ion-col {
+
+					button {
+						width: 100%;
+						background: transparent;
+						text-align: center;
+
+						.icon {
+							margin-bottom: 11px;
+							height: 59px;
+							width: 59px;
+							border-radius: 50%;
+							background: $bg-color;
+							display: inline-block;
+							text-align: center;
+							line-height: 59px;
+							color: #313D49;
+							font-size: 1.25rem;
+						}
+
+						.text {
+							display: block;
+							color: #F5F7FB;
+							font-size: .875rem;
+							line-height: 1.28;
+						}
+					}
+				}
+			}
+		}
+
+		&.item-ios {
+			margin-top: 30px !important;
+		}
+	}
+
+	ion-card {
+		margin: 25px 0 !important;
+		width: 100% !important;
+		background: transparent !important;
+		box-shadow: none !important;
+
+		ion-card-header {
+			margin: 0 0 10px;
+			padding: 0 !important;
+			text-transform: uppercase;
+			color: $auc-text !important;
+			font-size: .8125rem !important;
+			line-height: 1.23;
+		}
+
+		ion-card-content {
+			background: $bg-color;
+			border-radius: 5px;
+			padding: 10.5px 0 11.5px 15px !important;
+
+			ion-list {
+
+				ion-item {
+					@include deleteItemPaddingAndBorder;
+					min-height: auto !important;
+
+					ion-checkbox {
+						margin: 0 10px 0 !important;
+						align-self: stretch;
+						position: relative;
+
+						.checkbox-icon {
+							position: absolute;
+							top: 11px;
+							border: none !important;
+							height: 15px !important;
+							width: 15px !important;
+							border-radius: 3px !important;
+							background: #E8EFF4 !important;
+
+							&.checkbox-checked {
+								background: $second-bg-color !important;
+								text-align: center;
+								position: relative;
+
+								&::before {
+									position: absolute;
+									left: 3px;
+									top: 4px;
+									content: "\e64c";
+									@include themify;
+									color: $bg-color;
+									font-size: 8px;
+								}
+							}
+
+							.checkbox-inner {
+								border: none !important;
+							}
+						}
+					}
+
+					ion-label {
+						display: -webkit-flex;
+						display: -moz-flex;
+						display: -ms-flex;
+						display: -o-flex;
+						display: flex;
+						justify-content: space-between;
+						color: $light-text;
+						font-size: 1rem;
+						line-height: 1.25;
+						border-bottom: 1px solid #E8EFF4;
+						padding: 9.5px 15px 8.5px 0;
+
+						a {
+							position: relative;
+							float: right;
+							margin-right: 15px;
+							text-decoration: none;
+							color: #AEB7C8;
+							font-size: .77rem;
+
+							&::before {
+								position: absolute;
+								top: 4px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 50px + 50px + 20px !important;
+		}
+	}
+
+	.tip {
+		background: $bg-color !important;
+		@include deleteItemPaddingAndBorder;
+		height: 50px;
+		box-shadow: 0px -6px 10px rgba(49, 61, 73, 0.05);
+
+		.text {
+			color: $light-text;
+
+			.text-span {
+				margin-left: -20px;
+			}
+
+			ion-badge {
+				margin-right: -30px;
+				border-radius: 5px;
+				background: rgba(174, 183, 200, .1);
+				color: $light-text;
+				font-size: 1rem;
+				line-height: 1.25;
+				font-weight: normal;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,90 @@
+<ion-content>
+
+  <ion-item class="cover" *ngIf="mode !== 'selected-categories'">
+
+    <ion-header>
+      <ion-navbar>  
+      	<ion-title>Настройте свои аукционы</ion-title>     
+      </ion-navbar>
+    </ion-header>
+
+    <ion-item class="buttons">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+			<button
+				 (click)="selectRootCategory(2)"><span class="icon ti-package"
+				 [ngClass]="{'selected': selectedRootCategoryId === 2}"></span><span class="text">Товары</span></button>
+          </ion-col>
+
+          <ion-col col-4>
+			<button
+				 (click)="selectRootCategory(3)"><span class="icon ti-notepad"
+				 [ngClass]="{'selected': selectedRootCategoryId === 3}"></span><span class="text">Услуги</span></button>
+          </ion-col>
+
+          <ion-col col-4>
+			<button
+				 (click)="selectRootCategory(1)"><span class="icon ti-briefcase"
+				 [ngClass]="{'selected': selectedRootCategoryId === 1}"></span><span class="text">Работы</span></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="search-block">
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Поиск"></ion-searchbar>
+    </ion-item>
+
+  </ion-item>
+
+  <ion-list class="settings-list" *ngIf="categoryLevel === 0 && mode === 'catalog'">
+	<ion-item *ngFor="let item of blockCategories"
+			  (click)="selectBlockCategory(item.id)"
+			  [ngClass]="item.icon">
+		<p>{{ item.name }}</p>		
+	</ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content>
+		<ion-list *ngIf="categoryLevel === 1 && mode === 'catalog'">
+			<ng-container *ngFor="let categoryLevel1 of categoriesLevel1">
+				<ion-item>
+					<ion-label (click)="selectCategoryLevel1(categoryLevel1)" class="category">
+						{{ categoryLevel1.name }}<a href="#" class='ti-angle-right'></a>
+					</ion-label>
+					<ion-checkbox [ngModel]="categoryLevel1.selected" (click)="categorySelected(categoryLevel1, null)"></ion-checkbox>
+				</ion-item>
+
+				<!-- subcategory -->
+				<ion-list class="sublist"
+						  *ngIf="categoryLevel1.isOpen && categoryLevel1.subcategories"
+						  >
+						<ion-item *ngFor="let categoryLevel2 of categoryLevel1.subcategories">
+							<ion-label (click)="selectCategoryLevel2(categoryLevel2)" class="category">{{ categoryLevel2.name }}</ion-label>
+							<ion-checkbox [ngModel]="categoryLevel2.selected" (click)="categorySelected(categoryLevel2, categoryLevel1)"></ion-checkbox>
+						</ion-item>
+				</ion-list><!-- sublist -->
+			</ng-container>
+		</ion-list>
+    
+		<ion-list *ngIf="mode === 'selected-categories'">
+			<ng-container *ngFor="let category of selectedCategories">
+				<ion-item>
+					<ion-label class="category">
+						{{ category.name }}<a href="#" class='ti-angle-right'></a>
+					</ion-label>
+					<ion-checkbox [ngModel]="category.selected" (click)="categorySelected(category, null)"></ion-checkbox>
+				</ion-item>
+			</ng-container>
+		</ion-list>
+    
+		<ion-item class="selected-categories">
+			<ion-label (click)="showSelectedCategories()">Выбранные категории: {{ selectedCategoriesCount }}</ion-label>
+		</ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+

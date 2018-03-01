@@ -1,0 +1,67 @@
+page-tabs {
+	/* Tabs Component */
+ion-tabs {
+	/* position: fixed !important;
+	top: auto;
+	bottom: 0;
+	display: none; */
+	/* height: 50px; */
+
+	.tabbar {
+		opacity: 1;
+		height: 50px !important;
+		background: $content-bg !important;
+		border-top: 1px solid #E8EFF4 !important;
+
+		.tab-button {
+			font-size: 1.0625rem !important;
+			color: #AEB7C8 !important;
+			padding: 0 !important;
+
+			&[aria-selected="true"] {
+				color: $second-bg-color !important;
+
+				.tab-button-text {
+					transform: none !important;
+				}
+			}
+
+			&::before {
+				@include themify;
+			}
+
+			.tab-button-text {
+				letter-spacing: 0.13px !important;
+				font-size: .6875rem !important;
+				margin-top: 2px !important;
+			}
+
+			&:nth-child(1) {
+				&::before {
+					content: "\e6a4";
+				}
+			}
+			&:nth-child(2) {
+				&::before {
+					content: "\e64d";
+				}
+			}
+			&:nth-child(3) {
+				&::before {
+					content: "\e642";
+				}
+			}
+			&:nth-child(4) {
+				&::before {
+					content: "\e605";
+				}
+			}
+			&:nth-child(5) {
+				&::before {
+					content: "\e602";
+				}
+			}
+		}
+	}
+}
+}
