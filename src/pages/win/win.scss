@@ -1,0 +1,25 @@
+page-win {
+	ion-header {
+		ion-title {
+			.toolbar-title {
+				left: 0 !important;
+				padding: 0;
+			}
+		}
+	}
+	ion-content {
+		background-color: #fff !important;
+		text-align: center;
+		p {
+			margin: 20px 0;
+			font-size: 15px;
+			color: #313D49;
+			line-height: 22px;
+		}
+		a {
+			font-size: 16px;
+			color: #0A88E7;
+			text-decoration: none;
+		}
+	}
+}
