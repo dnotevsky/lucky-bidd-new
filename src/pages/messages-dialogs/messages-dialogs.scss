@@ -1,5 +1,4 @@
 $side-message_bg: #4A90E2;
-$message_color: #313D49;
 
 @keyframes typingAnimation {
 	0% {
@@ -21,6 +20,10 @@ $message_color: #313D49;
 }
 
 page-messages-dialogs {
+
+	.list-ios > .item-block:first-child {
+		border-top: none;
+	}
 
 	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios,
 	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
@@ -167,7 +170,7 @@ page-messages-dialogs {
 						.text {
 							padding: 11px 19px 11px 15px;
 							background: $bg-color;
-							color: $message_color;
+							color: $dark-blue-text;
 							box-shadow: 0 3px 10px rgba(225, 225, 225, 0.4531);
 							border-radius: 20px 20px 0px 20px;
 						}
@@ -203,7 +206,7 @@ page-messages-dialogs {
 							input {
 								width: 100%;
 								padding: 0 15px !important;
-								color: $message_color;
+								color: $dark-blue-text;
 								font-size: .9375rem;
 								line-height: 1.25;
 								font-family: 'Arial';

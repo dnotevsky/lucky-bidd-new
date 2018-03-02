@@ -1,0 +1,117 @@
+page-notifications {
+
+	.list-ios .item-block .item-inner,
+	.list-md .item-block .item-inner {
+		border-bottom: none;
+	}
+
+	ion-header {
+		ion-title {
+			.toolbar-title {
+				left: 0 !important;
+				padding: 0;
+			}
+		}
+	}
+
+	ion-content {
+
+		ion-list {
+			position: relative;
+			padding-left: 30px;
+
+			&::before {
+				content: "";
+				width: 1px;
+				height: calc(100% + 30px);
+				position: absolute;
+				top: -15px;
+				left: 4px;
+				background: rgba(176, 188, 237, 0.2194);
+			}
+		}
+
+		ion-item {
+			min-height: auto !important;
+			@include setOverflowVisible();
+		}
+
+		ion-item.notification {
+			margin-top: 16px !important;
+			padding: 16px 8px 14px 13px !important;
+			background: $bg-color !important;
+			border: 1px solid rgba(204, 211, 233, 0.271) !important;
+			border-radius: 4px !important;
+			box-shadow: 0 5px 12px rgba(211, 225, 244, 0.4476) !important;
+			color: $dark-blue-text !important;
+			font-family: 'Arial';
+
+			&_new {
+				position: relative;
+				&::after {
+					display: inline-block;
+					position: absolute;
+					left: -33px;
+					top: 15px;
+					content: "";
+					width: 9px;
+					height: 9px;
+					border: 2px solid #fff;
+					border-radius: 50%;
+					background: #4A90E2;
+					z-index: 3;
+				}
+			}
+
+			.item-inner {
+				padding-right: 0 !important;
+			}
+
+			ion-label {
+				display: flex;
+				align-items: center;
+				margin: 0;
+				box-shadow: none !important;
+			}
+
+			.date {
+				float: left;
+				margin-right: 16px;
+				padding-right: 15px;
+				border-right: 1px solid rgba(176, 188, 237, 0.3381);
+				font-size: .9rem;
+				line-height: 27px;
+				text-align: center;
+
+				span {
+					font-size: 1.4rem;
+				}
+			}
+
+			.h2 {
+				margin-bottom: 4px;
+				font-size: .9rem !important;
+				line-height: 1.15 !important;
+				color: $dark-blue-text !important;
+				white-space: normal;
+			}
+
+			.text {
+				font-size: .8rem !important;
+				line-height: 1.33 !important;
+				color: $dark-blue-text !important;
+				white-space: normal;
+			}
+
+			.thumbnail {
+				display: inline-block;
+				margin: 12px 6px 0 0;
+				width: 43px;
+				height: 43px;
+				border-radius: 4px;
+				font-size: 0;
+			}
+		}
+
+	}
+}
