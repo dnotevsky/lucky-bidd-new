@@ -1,3 +1,25 @@
+$side-message_bg: #4A90E2;
+$message_color: #313D49;
+
+@keyframes typingAnimation {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	15% {
+		opacity: .4;
+		transform: translateY(-6px);
+	}
+	35% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 page-messages-dialogs {
 
 	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios,
@@ -6,6 +28,7 @@ page-messages-dialogs {
 	}
 
 	ion-header {
+		box-shadow: 0 -0.5px 1px rgba(174, 183, 200, 1);
 
 		.toolbar-ios {
 			padding-top: 0;
@@ -45,10 +68,13 @@ page-messages-dialogs {
 	}	
 
 	ion-content {
+		background: url(../assets/img/messages/bg.png) center center repeat,
+			$bg-color !important;
+		background-size: cover;
 
 		ion-list {
 			margin-bottom: 0 !important;
-			padding: 15px !important;
+			padding: 15px 15px 63px !important;
 			height: 100%;
 		    justify-content: flex-end;
 		    display: flex;
@@ -58,91 +84,92 @@ page-messages-dialogs {
 				@include deleteItemPaddingAndBorder;
 			}
 
-			ion-item {
-				margin-bottom: 15px !important;
+			.message {
+				padding-bottom: 13px !important;
 				min-height: auto !important;
 				background: transparent !important;
-				padding-right: 20px !important;
 
-				.item-img {
-					margin-right: 6px;
-					display: inline-block;
-					float: left;
-					position: relative;
-					width: 30px;
-					height: 30px;
-
-					img {
-						border-radius: 50%;
-						width: 30px;
+				div[ion-label] {
+					.text {
 						display: inline-block;
-						margin-top: 3px;
+						font-size: .9375rem;
+						line-height: 1.25;
+						font-family: 'Arial';
 					}
 				}
 
-				a {
-					text-decoration: none;
-				}
+				&_side {
+					padding-left: 0 !important;
+					padding-right: 20px !important;
 
-				div[ion-label] {
-					margin-left: 30px + 6px;
+					div[ion-label] {
+						margin-right: 28px !important;
 
-					.text {
-						display: inline-block;
-						border-radius: 6px;
-						background: #E8EFF4;
-						padding: 11px 15px 10px;
-						color: $light-text;
-						font-size: 1rem;
-						line-height: 1.25;
+						.text {
+							padding: 11px 15px 11px 19px;
+							background: $side-message_bg;
+							color: $bg-color;
+							border-radius: 20px 20px 20px 0;
+						}
+					}
+
+					&-typing {
+						div[ion-label] {
+
+							.text {
+								height: 40px;
+								padding-left: 13px;
+								padding-right: 13px;
+
+								.dot {
+									display: inline-block;
+									margin: 0 3px;
+									width: 6px;
+									height: 6px;
+									border-radius: 50%;
+									background: $bg-color;
+									animation-name: typingAnimation;
+									animation-duration: 1s;
+									animation-iteration-count: infinite;
+									animation-timing-function: ease-out;
+
+									&:nth-child(1) {
+										animation-delay: 0;
+									}
+									&:nth-child(2) {
+										animation-delay: .17s;
+									}
+									&:nth-child(3) {
+										animation-delay: .34s;
+									}
+								}
+							}
+						}
 					}
 				}	
 
-				&.my-message {
+				&_my {
 					padding-left: 20px !important;
 					padding-right: 0 !important;
+					overflow: visible !important;
+
+					ion-label,
+					.input-wrapper,
+					.item-inner {
+						overflow: visible !important;
+					}
 
 					div[ion-label] {
+						float: right;
 						margin-left: 28px !important;
+						overflow: visible !important;
 
 						.text {
-							background: $second-bg-color;
-							color: $bg-color;
-						}
-
-						.satus {
-							margin-top: 4px;
-							margin-right: 3px;
-							text-align: right;
-							color: $auc-text;
-							font-size: .8125rem;
-							line-height: 1.23;
-						}
-					}
-				}
-
-				&.typing {
-					margin-bottom: 0 !important;
-					padding-right: 0 !important;
-					font-size: 0;
-
-					ion-icon {
-						float: left;
-						margin-right: 5px;
-						color: #AEB7C8;
-						font-size: .6875rem;
-						line-height: 1;
-					}
-
-					div[ion-label] {
-						margin-left: calc(.6875rem + 5px) !important;
-
-						.text {
-							background: transparent;
-							color: $auc-text;
-							font-size: .8125rem;
-							line-height: 1.23;
-							padding: 0 !important;
+							padding: 11px 19px 11px 15px;
+							background: $bg-color;
+							color: $message_color;
+							box-shadow: 0 3px 10px rgba(225, 225, 225, 0.4531);
+							border-radius: 20px 20px 0px 20px;
 						}
 					}
 				}
@@ -165,9 +192,9 @@ page-messages-dialogs {
 
 				.item-inner {
 					height: 50px;
-					border-radius: 5px;
+					border-radius: 8px;
 					background: $bg-color;
-					box-shadow: 0px 2px 3px 0 rgba(83, 88, 95, 0.0869);
+					box-shadow: 0px 2px 4px 0 rgba(200, 200, 200, 0.6784);
 
 					.input-wrapper {
 
@@ -176,10 +203,11 @@ page-messages-dialogs {
 							input {
 								width: 100%;
 								padding: 0 15px !important;
-								color: $auc-text;
-								font-size: 1rem;
+								color: $message_color;
+								font-size: .9375rem;
 								line-height: 1.25;
-								@include placeholder($auc-text);
+								font-family: 'Arial';
+								@include placeholder(#B2B2B2);
 							}
 						}
 					}
@@ -188,12 +216,11 @@ page-messages-dialogs {
 						background: transparent;
 
 						&::before {
+							width: 22px;
+							height: 18px;
 							display: inline-block;
-							content: "\e62c";
-							@include themify;
-							color: $second-bg-color;
-							font-size: 1.375rem;
-							transform: rotate(135deg);
+							content: "";
+							background: url(../assets/img/icons/send.png) center center no-repeat;
 						}
 					}
 				}

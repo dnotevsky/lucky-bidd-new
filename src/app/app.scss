@@ -121,6 +121,21 @@ $auc-text: #9EA8BC;
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Arial';
+	src: url('../assets/fonts/Arial/regular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Arial';
+	src: url('../assets/fonts/Arial/bold.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* General styles */
 html {
 	font-size: 16px !important;
 }
