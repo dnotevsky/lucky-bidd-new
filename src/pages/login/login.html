@@ -10,18 +10,17 @@
 <ion-content>
 
   <div class="logo-block">
-    <img src="assets/img/logo.png" alt="">
-    <p>LuckyBidd</p>
+    <img src="assets/img/login/logo.png" alt="">
+    <p>Bidhunter</p>
   </div>
 
   <form (submit)="doLogin()">
-    <p class="login-text">Войдите под своим аккаунтом на портале поставщиков</p>
 
     <ion-list>
 
       <ion-item>
-        <!-- <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label> -->
-        <ion-input class="login-input" type="email" [(ngModel)]="account.email" name="email" placeholder="Email"></ion-input>
+        <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input class="login-input" type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
 
       <!--
@@ -34,9 +33,11 @@
       -->
 
       <ion-item>
-        <!-- <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label> -->
-        <ion-input class="login-input" type="password" [(ngModel)]="account.password" name="password" placeholder="Password"></ion-input>
+        <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input class="login-input" type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
+
+      <p class="login-text">Войдите под своим аккаунтом на портале поставщиков</p>
 
       <div>
         <button class="login-button" ion-button color="primary" block><!-- {{ 'LOGIN_BUTTON' | translate }} --> Войти</button>
