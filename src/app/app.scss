@@ -222,7 +222,7 @@ ion-content {
 
 /* Cover Component */
 .cover {
-	background: $second-bg-color !important;
+	background: url("../assets/img/auction/auction-bg.png") no-repeat center, $second-bg-color !important;
 	margin: 0 -22px 56px;
     padding: 0 22px !important;
     width: auto;

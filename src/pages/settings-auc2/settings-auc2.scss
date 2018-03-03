@@ -136,6 +136,7 @@ page-settings-auc2 {
 							line-height: 59px;
 							color: #313D49;
 							font-size: 1.25rem;
+							box-shadow: 0px 4px 12px rgba(71, 79, 107, 0.118405);
 						}
 
 						.text {
@@ -179,7 +180,8 @@ page-settings-auc2 {
 				ion-item {
 					@include deleteItemPaddingAndBorder;
 					min-height: auto !important;
-
+					
+					border-bottom: 1px solid #dedede !important;
 					ion-checkbox {
 						margin: 0 10px 0 0 !important;
 						align-self: stretch;
@@ -189,9 +191,9 @@ page-settings-auc2 {
 							position: absolute;
 							top: 20px;
 							border: none !important;
-							height: 15px !important;
-							width: 15px !important;
-							border-radius: 3px !important;
+							height: 24px !important;
+							width: 24px !important;
+							border-radius: 4px !important;
 							background: #E8EFF4 !important;
 
 							&.checkbox-checked {
@@ -201,12 +203,12 @@ page-settings-auc2 {
 
 								&::before {
 									position: absolute;
-									left: 3px;
+									left: 4px;
 									top: 4px;
 									content: "\e64c";
 									@include themify;
 									color: $bg-color;
-									font-size: 8px;
+									font-size: 16px;
 								}
 							}
 
@@ -227,7 +229,8 @@ page-settings-auc2 {
 						font-size: 1rem;
 						line-height: 1.25;
 						border-bottom: 1px solid #E8EFF4;
-						padding: 18px 0 18px 0;
+						padding: 22px 0;
+						border: none;
 
 						a {
 							position: relative;
@@ -325,6 +328,7 @@ page-settings-auc2 {
 					font-size: 16px;
 					min-height: 39px;
 					color: #252E39;
+
 					&::before {
 						content: "\e605";
 						font-family: 'themify';

@@ -48,7 +48,9 @@ page-settings-auc1 {
 		}  
 
 		ion-title {
-
+			font-size: 20px;
+			
+			color: #FFFFFF;
 			.toolbar-title {
 				color: $bg-color !important;
 			} 
@@ -136,6 +138,7 @@ page-settings-auc1 {
 							line-height: 59px;
 							color: #313D49;
 							font-size: 1.25rem;
+							box-shadow: 0px 4px 12px rgba(71, 79, 107, 0.118405);
 						}
 
 						.text {
@@ -163,11 +166,20 @@ page-settings-auc1 {
 			width: 50%;
 			padding: 0 10px;
 			min-height: 130px;
+			margin-top: 14px; 
 			.item-inner {
 				padding-right: 0 !important;
+
+				background: #FFFFFF;
+				border: 1px solid rgba(216, 228, 242, 0.280344) !important;
+				box-sizing: border-box;
+				box-shadow: 0px 5px 12px rgba(217, 226, 233, 0.443756);
+				border-radius: 4px;
 			}
 			ion-label {
 				margin: 0;
+				padding: 0 5px;
+    			white-space: normal;
 			}
 			p {
 				font-size: 13px;
@@ -501,15 +513,23 @@ page-settings-auc1 {
 		}
 	}
 	.selected-categories {
-		position: fixed;
-		bottom: 50px;
-		left: 0;
 		background-color: #32A0F4 !important;
-		padding-left: 18px;
 		min-height: 50px;
+		background: #219AF5;
+		border-radius: 5px;
+		text-align: center;
+		margin-top: 10px;
+
 		ion-label {
 			color: #fff;
 			font-size: 16px;
+			line-height: 24px;
+			span {
+				font-size: 24px;
+				position: absolute;
+			    right: 20px;
+			    top: 14px;
+			}
 			a {
 				color: #fff;
 				text-decoration: none;
