@@ -16,21 +16,21 @@ import { Api } from '../../providers/api/api';
   templateUrl: 'settings-account.html',
 })
 export class SettingsAccountPage {
-  phone: String;
-  email: String;
+  /*phone: String;
+  email: String;*/
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api) {
-    (async () => {
+    /*(async () => {
       const response = await this.api.get('user-contacts')
       if (response.data.success === true) {
         this.phone = response.data.phone
         this.email = response.data.email
       }
-    })()
+    })()*/
   }
 
   saveChanges() {
-    (async () => {
+    /*(async () => {
       var updateParams = {
         phone: this.phone,
         email: this.email
@@ -40,7 +40,7 @@ export class SettingsAccountPage {
         this.phone = response.data.phone
         this.email = response.data.email
       }
-    })()
+    })()*/
   }
 
   ionViewDidLoad() {

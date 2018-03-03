@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Настройка аккаунта</ion-title>
+    <ion-title>Настройка уведомлений</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -32,16 +32,40 @@
 	</ion-list-->
 
 	<ion-list>
-	  <ion-list-header>
+	  <ion-list-header class="bell">
+	    Уведомлять меня о событиях
+	  </ion-list-header>
+
+	  <ion-item class="notif">
+	    <ion-label class="auc">Новые аукционы</ion-label>
+	    <ion-toggle [(ngModel)]="auc"></ion-toggle>
+	  </ion-item>
+
+	  <ion-item class="notif">
+	    <ion-label class="win">Победа на аукционе</ion-label>
+	    <ion-toggle [(ngModel)]="win"></ion-toggle>
+	  </ion-item>
+
+	  <ion-item class="notif">
+	    <ion-label class="break">Ваша ставка перебита</ion-label>
+	    <ion-toggle [(ngModel)]="break"></ion-toggle>
+	  </ion-item>
+
+	</ion-list>
+
+	<ion-list>
+	  <ion-list-header class="contacts">
 	    Контакты для связи
 	  </ion-list-header>
 
-	  <ion-item>
-	    <ion-input [(ngModel)]="phone" type="text" placeholder="Телефон"></ion-input>
+	  <ion-item class="input">
+	  	<ion-label>Телефон</ion-label>
+	    <ion-input [(ngModel)]="phone" type="text" placeholder="" value="+38 3948 349"></ion-input>
 	  </ion-item>
 
-	  <ion-item>
-	    <ion-input [(ngModel)]="email" type="text" placeholder="Email"></ion-input>
+	  <ion-item class="input">
+	  	<ion-label>Email</ion-label>
+	    <ion-input [(ngModel)]="email" type="text" placeholder="" value="garik@dol.tu"></ion-input>
 	  </ion-item>
 	</ion-list>
 
@@ -63,7 +87,7 @@
 		<p>Чтобы получать уведомления по аукционам и для связи в экстренных ситуациях заполните коррекно данные в полях</p>
 	</ion-list>
 
-	<button ion-button full (click)="saveChanges()">Сохранить изменения</button>
+	<button class="btn" ion-button full (click)="saveChanges()">Сохранить изменения</button>
 
 <!-- <ion-tabs>
     <ion-tab [root]="tab1" tabTitle="Новые"></ion-tab>

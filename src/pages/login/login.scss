@@ -3,6 +3,11 @@ page-login {
 	.content {
 		background: transparent !important;
 
+		.item-inner {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
 		ion-item {
 			background: transparent !important;
 			padding: 0;

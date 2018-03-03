@@ -4,10 +4,6 @@ page-settings-account {
 			display: block;
 		}
 	}
-	.list-md .item-md .item-inner {
-		padding-right: 0 !important;
-		border: none !important;
-	}
 	.list-md .item-input.item-input-has-focus:last-child,
 	.list-md .item-input.input-has-focus:last-child {
 		box-shadow: none;
@@ -16,10 +12,21 @@ page-settings-account {
 	.list-md .item-input.input-has-focus ion-input {
 		border: 1px solid #219AF5;
 	}
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block,
+	.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+	.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+		border-bottom: none;
+		box-shadow: none;
+	}
+
 	ion-content {
+		background: #fff !important;
+
 		.scroll-content {
-			padding: 0;
+			padding: 0 !important;
+			background: #fff !important;
 		}
+
 		.settings-title  {
 			padding: 19px 22px;
 			h2 {
@@ -27,64 +34,190 @@ page-settings-account {
 				margin: 0;
 			}
 		}
+
+		ion-list {
+			margin-bottom: 20px !important;
+			background: #fff !important;
+
+			ion-list-header {
+				padding-top: 15px !important;
+				color: $dark-blue-text !important;
+				font-size: 1rem !important;
+				font-family: "Arial", sans-serif !important;
+				line-height: 1.125 !important;
+				text-transform: none !important;
+				background: #fff !important;
+				letter-spacing: 0 !important;
+				border-bottom: none !important;
+				@include setOverflowVisible();
+
+				ion-label {
+					color: $dark-blue-text !important;
+					font-size: 1rem !important;
+					font-family: "Arial", sans-serif !important;
+					line-height: 1.125 !important;
+					text-transform: none !important;
+					background: #fff !important;
+					letter-spacing: 0 !important;
+					border-bottom: none !important;
+				}
+
+				&.bell {
+					&::before {
+						margin-right: 14px !important;
+						position: relative !important;
+						top: 0;
+						left: 0;
+						content: "";
+						width: 21px;
+						height: 23px;
+						display: inline-block;
+						background: url(../assets/img/icons/bell.png) center center no-repeat;
+					}
+				}
+				&.contacts {
+					&::before {
+						margin-right: 14px;
+						position: relative;
+						top: 0;
+						left: 0;
+						content: "";
+						width: 20px;
+						height: 20px;
+						display: inline-block;
+						background: url(../assets/img/icons/user.png) center center no-repeat;
+					}
+				}
+			}
+		}
+
 		.list-header-md {
-			border-top: none;
+			border-top: none !important;
 		}
 		ion-item {
-			&.item-md {
-				background-color: #f7f9fc;
-				min-height: 50px;
-				padding: 0 22px;
-				margin: 20px 0 15px;
+			&.notif {
+				min-height: auto !important;
+				border-bottom: none !important;
+
+				@include setOverflowVisible();
+
+				.item-inner {
+					border-bottom: 1px solid #E8EFF4 !important;
+				}
+
 				&:last-child {
-					padding-bottom: 20px;
-					border: none !important;
+					.item-inner {
+						border-bottom: none !important;
+					}
+				}
+
+				ion-label {
+					display: flex;
+					align-items: center;
+					color: #000 !important;
+					font-size: 1rem !important;
+					text-transform: none !important;
+					line-height: 1.125 !important;
+					&::before {
+						margin-right: 12px;
+						position: relative;
+						top: 0;
+						left: 2px;
+						content: "";
+						width: 26px;
+						height: 26px;
+						display: inline-block;
+						background-size: 100%;
+					}
+					&.auc {
+						&::before {
+							background: url(../assets/img/icons/auction.png) center center no-repeat;
+						}
+					}
+					&.win {
+						&::before {
+							background: url(../assets/img/icons/win.png) center center no-repeat;
+						}
+					}
+					&.break {
+						&::before {
+							background: url(../assets/img/icons/close.png) center center no-repeat;
+						}
+					}
+				}
+
+				.toggle-checked .toggle-icon {
+					background: linear-gradient(to bottom, #3CD2F4, #219AF5) !important;
+				}
+
+				.toggle-checked .toggle-inner {
+					transform: translate3d(14px, 0, 0)!important;
+				}
+
+				.toggle-icon {
+					width: 39px !important;
+    				height: 25px !important;
+    				background: #fff !important;
+    				border: 1px solid #E8EFF4 !important;
+
+    				.toggle-inner {
+    					width: 21px !important;
+    					height: 21px !important;
+    					background: #fff !important;
+    					box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1539);
+    					top: 1px;
+    				}
+				}
+			}
+
+			&.input {
+				.item-inner {
+					border-bottom: 2px solid #DFDEE2 !important;
+				}
+				.input-wrapper {
+					display: block !important;
+				}
+				ion-label {
+					margin-bottom: -4px;
+					font-size: 14px !important;
+					color: #ADADAD !important;
+					line-height: 16px !important;
+					font-family: "Arial" !important;
+					width: 100% !important;
+					flex-grow: 1 !important;
 				}
 			}
 			ion-input {
-				font-size: 16px;
-				background-color: #fff;
-				border-radius: 5px;
+				font-size: 16px !important;
+				background: transparent !important;
+				border-radius: 5px !important;
 				.text-input-md {
-					margin: 13px 15px;
+					margin: 13px 15px !important;
 				}
 			}
 		}
 		.fill-correct {
-			font-size: 13px;
-			color: #9EA8BC;
-			margin: 0;
-			padding: 0 22px 80px;
+			font-size: 13px !important;
+			color: #9EA8BC !important;
+			margin: -5px 0 26px !important;
+			padding: 0 22px 0 !important;
+			text-align: center !important;
 			p {
-				margin: 0;
-				padding-left: 26px;
-				position: relative;
-				line-height: 18px;
-				&::before {
-					content: "\e697";
-					font-family: 'themify';
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 17px;
-					height: 17px;
-					border-radius: 50%;
-					border: 1px solid #AEB7C8;
-					text-align: center;
-					line-height: 1;
-					font-size: 12px;
-					padding-top: 1.5px;
-					box-sizing: border-box;
-					    -webkit-box-sizing: border-box;
-				}
+				margin: 0 !important;
+				position: relative !important;
+				line-height: 18px !important;
 			}
 		}
-		.button-full-md {
-			bottom: 50px;
-			margin: 0;
-			font-size: 16px;
-			height: 50px;
-			text-transform: none;
-		}
+	}
+
+	.btn {
+		width: calc(100% - 30px) !important;
+		margin: 26px  15px 20px !important;
+		font-size: 1rem !important;
+		font-family: "Arial" !important;
+		height: 46px !important;
+		text-transform: none !important;
+		border-radius: 6px !important;
+		background: #219AF5 !important;
 	}
 }

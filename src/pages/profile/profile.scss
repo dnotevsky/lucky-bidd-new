@@ -8,6 +8,7 @@ page-profile {
 		}
 	}
 	ion-content {
+		background-color: #fff !important;
 		.item-md {
 			float: left;
 			width: calc(50% - 11px);
@@ -15,6 +16,7 @@ page-profile {
 			padding: 0;
 			text-align: center;
 			min-height: 130px;
+			box-shadow: 0 5px 12px rgba(217, 226, 233, 0.5);
 			&:nth-child(1),
 			&:nth-child(2) {
 				margin-top: 15px;
@@ -28,14 +30,16 @@ page-profile {
 			}
 			p {
 				font-size: 14px;
-				color: #252E39;
+				color: #313D49;
+				line-height: 21px;
 				&::before {
 					content: "\e68c";
 					font-family: 'themify';
 					display: block;
 					font-size: 25px;
-					margin-bottom: 20px;
-					color: #1E85F2;
+					margin-bottom: 16px;
+					color: #35c2ef;
+					line-height: 25px;
 				}
 			}
 			&.profile-notice p::before {
