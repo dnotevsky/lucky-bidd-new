@@ -224,19 +224,21 @@ page-settings-auc3 {
 						display: -o-flex;
 						display: flex;
 						justify-content: space-between;
+						align-items: center;
 						color: $light-text;
 						font-size: 1rem;
-						line-height: 1.25;
+						line-height: 1.2;
 						padding: 22px 0;
 
 						a {
-							position: absolute;
+							position: static;
+							width: 15px;
+							height: 13px;
+							display: inline-block;
 							margin-right: 15px;
 							text-decoration: none;
 							color: #219AF5;
 							font-size: .77rem;
-							top: 38px;
-							right: 5px;
 							transform: rotate(-90deg);
 							&::before {
 								position: absolute;
@@ -307,7 +309,7 @@ page-settings-auc3 {
 		background: #219AF5;
 		border-radius: 5px;
 		text-align: center;
-		margin-top: 10px;
+		margin-top: 30px;
 		ion-label {
 			color: #fff;
 			font-size: 16px;
