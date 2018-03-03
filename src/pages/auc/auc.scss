@@ -8,6 +8,9 @@ page-auc {
 	.primary-btn {
 		font-size: 16px;
 		text-transform: none;
+		span {
+			margin-right: 18px; 
+		}
 	}
 	.stop-participating {
 		text-align: center;
@@ -271,35 +274,41 @@ page-auc {
 			position: absolute;
 			width: 100%;
 			left: 0;
-			bottom: 50px;
+			bottom: 0px;
 			background-color: #fff;
 			border-radius: 8px 8px 0 0;
 			padding: 20px 23px 22px;
 			ion-card-header {
-				font-size: 20px !important;
-				color: #252E39 !important;
+				padding: 0;
+				padding-right: 30px;  
 				text-transform: none;
 				position: relative;
+				line-height: 26px;
+				font-size: 18px !important;
+				color: #313D49 !important;
+				background: none;
+
+				white-space: normal;
 				&::before {
-					content: "\e646";
+					content: "\e64b";
 					font-family: 'themify';
 					position: absolute;
 					width: 20px;
 					height: 20px;
 					border-radius: 50%;
-					background-color: #F7F9FC;
 					text-align: center;
-					top: 0;
+					top: -5px;
 					right: 0;
-				    font-size: 10px;
+				    font-size: 14px;
 				    padding-top: 5px;
 				    box-sizing: border-box;
 				}
 			}
 			ion-card-content {
+				margin-top: 0;
 				padding: 13px 0 !important;
 				ion-item {
-					border: 1px solid #E8EFF4;
+					border-bottom: 1px solid #E8EFF4;
 					border-radius: 5px;
 					min-height: auto;
 					height: 50px;

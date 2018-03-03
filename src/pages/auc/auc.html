@@ -138,7 +138,7 @@
     <button class="primary-btn" ion-button color="primary" block>Участвовать в аукционе</button>
   </div>
   <div>
-    <button class="primary-btn"  ion-button color="primary" block>Изменить ставку</button>
+    <button class="primary-btn"  ion-button color="primary" block><span class="ti-reload"></span>Изменить ставку</button>
   </div>
   <ion-item class="auc-winner">
     <div class="auc-winner_text">
@@ -175,8 +175,32 @@
       <a href="#" class="tip-link"><span class="ti-angle-right"></span></a>
     </p>
   </ion-item>
+  <ion-card class="auc-modal" style="display: none;">
+    <div class="auc-modal_inner">
+      
+      <ion-card-header>
+        Укажите цену, ниже которой вы не хотите продолжать аукцион
+      </ion-card-header>
 
-  <ion-card class="auc-modal" *ngIf="showMinCostDialog">
+      <ion-card-content>
+        <ion-item class="auc-modal_rate">
+          <ion-input type="text" placeholder="Введите вашу ставку..."></ion-input>
+        </ion-item>
+
+        <!--<ion-item class="auc-modal_chance">
+          <div class="chance">
+            <span class="chance-title">Вероятность выйгрыша составит</span>
+            <span class="chance-amount">70%</span>
+          </div>
+        </ion-item>-->
+
+        <button ion-button block>Сделать ставку</button>
+
+      </ion-card-content>
+
+    </div>
+  </ion-card>
+  <!--<ion-card class="auc-modal" *ngIf="showMinCostDialog">
     <div class="auc-modal_inner">
       
       <ion-card-header (click)="showMinCostDialog = false">
@@ -188,12 +212,12 @@
           <ion-input [(ngModel)]="minCost" type="text" placeholder="Введите вашу ставку..."></ion-input>
         </ion-item>
 
-        <!--ion-item class="auc-modal_chance">
+        ion-item class="auc-modal_chance">
           <div class="chance">
             <span class="chance-title">Вероятность выйгрыша составит</span>
             <span class="chance-amount">70%</span>
           </div>
-        </ion-item-->
+        </ion-item>
 
         <button ion-button block (click)="acceptMinCost()">Принять ставку</button>
 
@@ -201,7 +225,7 @@
 
     </div>
   </ion-card>
-
+-->
 
 <!--   <ion-tabs>
   <ion-tab [root]="tab1" tabTitle="Новые"></ion-tab>
