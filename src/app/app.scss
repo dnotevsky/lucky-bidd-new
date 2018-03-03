@@ -22,7 +22,7 @@
 /* COLORS */
 $bg-color: #fff;
 $second-bg-color: #219AF5;
-$content-bg: #F7F9FC;
+$content-bg: #fff;/* #F7F9FC; */
 $text-color: #000;
 $second-text-color: #fff;
 $light-text: #252E39;
@@ -220,8 +220,7 @@ ion-content {
 
 /* Cover Component */
 .cover {
-	background: url("../assets/img/auction/auction-bg.png") top left repeat,
-		$second-bg-color !important;
+	background: $second-bg-color !important;
 	margin: 0 -22px 56px;
     padding: 0 22px !important;
     width: auto;
@@ -303,17 +302,21 @@ ion-content {
 
 		.truck {
 			position: relative;
-			height: 2px;
+			height: 6px;
 			background: rgba(255, 255, 255, 0.2);
-			border-radius: 1px;
-
+			background: #D5DCF0;
+			mix-blend-mode: normal;
+			opacity: 0.7;
+			border-radius: 4.5px;
+			margin-top: 12px;
 			.bar {
 				position: absolute;
 				left: 0;
 				top: 0;
-				height: 2px;
-				background: #fff;
+				height: 6px;
 				border-radius: 1px;
+				background: linear-gradient(92.72deg, #80C3F3 -37.74%, #4A90E2 41.2%);
+				border-radius: 4.5px;
 			}
 		}
 	}
@@ -357,7 +360,7 @@ ion-content {
 			.now-price {
 
 				.price {
-					color: #75BB51;
+					color: #2C84EA;
 				}
 			}
 		}

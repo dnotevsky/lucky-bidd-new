@@ -1,5 +1,38 @@
 page-auc {
+	.price-block {
+		margin-top: 26px;
+	}
+	.cover {
+		margin-bottom: 26px;
+	}
+	.primary-btn {
+		font-size: 16px;
+		text-transform: none;
+	}
+	.stop-participating {
+		text-align: center;
+		font-size: 16px;
+		.link {
+			position: relative;
+			font-size: 16px;
+			text-align: center;
+			text-decoration: underline;
 
+			color: #E89A1B;
+			&::before {
+				content: "\e646";
+				font-family: 'themify';
+				position: absolute;
+				top: -4px;
+				left: -30px;
+				text-align: center;
+				color: #E89A1B;
+				font-size: 12px;
+			    padding-top: 6.5px;
+			    box-sizing: border-box;
+			}
+		}
+	}
 	.status {
 		position: relative;
 		overflow: visible;
@@ -28,6 +61,14 @@ page-auc {
 
 
 	ion-item {
+		button {
+			font-size: 16px;
+			text-transform: none;
+			border-radius: 5px;
+			height: 46px;
+			background-color: #219AF5;
+			margin: 0;
+		}
 		padding: 0 !important;
 
 		.label {
@@ -52,63 +93,76 @@ page-auc {
 			.auc-winner_text {
 				padding-left: 45px;
 				position: relative;
-				&::before {
-					content: "\e642";
+				text-align: center;
+					&::before {
+					content: "\e624";
 					font-family: 'themify';
 					position: absolute;
-					top: 10px;
-					left: 0;
-					width: 33px;
-					height: 33px;
-					border-radius: 50%;
-					background-color: #FFF1CE;
+					top: 0px;
+					left: 20px;
 					text-align: center;
 					color: #FFAA08;
-					font-size: 20px;
+					font-size: 26px;
 				    padding-top: 6.5px;
 				    box-sizing: border-box;
 				}
 				span {
-					font-size: 14px;
-					color: #fff;
-					span {
-						display: block;
-						font-size: 16px;
-						text-transform: uppercase;
-					}
+					font-size: 16px;
+					color: #313D49;
+					opacity: 0.9;
 				}
 			}
 		}
 	}
 
 	ion-card {
-		margin: 25px 0 !important;
+		margin: 5px 0 !important;
 		width: 100% !important;
 		background: transparent !important;
 		box-shadow: none !important;
 
 		ion-card-header {
+			/*
 			margin: 0 0 10px;
 			padding: 0 !important;
 			text-transform: uppercase;
 			color: $auc-text !important;
 			font-size: .8125rem !important;
 			line-height: 1.23;
+			*/
+			margin: 0 0 10px;
+			font-size: 13px !important;
+			position: absolute;
+		    width: 100%;
+		    left: 0px;
+		    color: #606280;
+		    background: #EBF0F6;
+		    padding: 9px 22px; 
 		}
 
 		ion-card-content {
+			margin-top: 47px;
 			background: $bg-color;
 			border-radius: 5px;
 			padding: 20px !important;
 
 			.text {
+				/*
 				color: $light-text;
 				font-size: 1rem;
 				line-height: 1.25;
-
+				
 				@media screen and (max-width: 355px) {
 					font-size: .9rem;
 				}
+				*/
+				font-family: Arial;
+				font-style: normal;
+				font-weight: normal;
+				line-height: 18px;
+				font-size: 14px;
+
+				color: #757585;
 			}
 
 			.delivery {
@@ -119,20 +173,18 @@ page-auc {
 
 				.text {
 					line-height: 39px;
+					color: #313D49;
 				}
 
-				.truck {
+				.clock-container {
 					display: inline-block;
 					margin-right: 11px;
-					width: 39px;
-					height: 39px;
-					border-radius: 50%;
-					background: #F1E2FF;
-					text-align: center;
 
-					.ti-truck {
-						color: #7843A6;
-						font-size: 1rem;
+					.ti-time {
+						font-size: 23px;
+    					color: #219AF5;
+    					position: relative;
+    					top: 5px;
 					}
 				}
 			}
@@ -143,15 +195,18 @@ page-auc {
 				margin-bottom: -20px;
 				border-top: 1px solid #E8EFF4;
 				padding-top: 10px;
-
+				text-align: center;
 				.link {
 					display: inline-block;
 					margin-right: 11px;
-					height: 39px;
-					width: 39px;
-					background: #F5FBFE;
-					border-radius: 50%;
+					font-family: Arial;
+					font-style: normal;
+					font-weight: normal;
+					line-height: normal;
+					font-size: 16px;
 					text-align: center;
+
+					color: #2475D4;
 
 					.ti-link {
 						position: relative;
@@ -332,6 +387,26 @@ page-auc {
 
 	.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
 		border-color: transparent !important;
+	}
+
+	.start-price.minimal {
+		p {
+			display: inline-block;
+			width: 49%;
+		}
+		.text {
+			font-size: 13px;
+			letter-spacing: -0.1px;
+			color: #AEB7C8;
+		}
+		.price {
+			text-align: right;
+			color: #313D49;
+			font-style: normal;
+			font-weight: normal;
+			line-height: normal;
+			font-size: 21px;
+		}
 	}
 
 }
