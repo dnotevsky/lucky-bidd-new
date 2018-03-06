@@ -17,7 +17,7 @@
     <ion-item class="title">
       <p class="text">Закупка продукции:</p>
       <p class="name">Сплит-системы от производителя.
-Европейское качество.{{ name }}</p>
+Европейское качество.<!-- {{ name }} --></p>
     </ion-item>
 
     <!--<ion-item class="auc-winner" *ngIf="!isActiveAuction">
@@ -35,11 +35,11 @@
         <tr>
           <td class="start-price">
             <p class="text">Начальная цена</p>
-            <p class="price">{{ startCost }} ₽</p>
+            <p class="price"><!-- {{ startCost }} -->205 130,00 ₽</p>
           </td>
           <td class="now-price">
             <p class="text">Текущая цена</p>
-            <p class="price" *ngIf="lastBetCost !== null">{{ lastBetCost }} ₽</p>
+            <p class="price" *ngIf="lastBetCost !== null"><!-- {{ lastBetCost }} -->205 130,00 ₽</p>
             <p class="price" style="display: none;" *ngIf="lastBetCost == null">Ставок не было</p>
           </td>
         </tr>
@@ -60,19 +60,20 @@
         </tr>
         <tr>
           <td class="progress-bar" colspan="2">
-            <p class="text">До окончания аукциона <span class="time">{{ endTimeRemainingFormatted }}</span></p>
+            <p class="text">До окончания аукциона <span class="time">00:02:55<!-- {{ endTimeRemainingFormatted }} --></span></p>
             <div class="truck">
-              <div class="bar" [ngStyle]="{'width': barWidth + '%'}"></div>
+              <!-- <div class="bar" [ngStyle]="{'width': barWidth + '%'}"></div> -->
+              <div class="bar" style="width: 50%"></div>
             </div>
           </td>
         </tr>
       </table>
     </ion-item>
   </ion-item>
-  <ion-item>
+  <ion-item class="minimal-price__block">
     <div class="start-price minimal">
       <p class="text">Ваша минимальная ставка</p>
-      <p class="price">205 130,00{{ minCost }} ₽</p>
+      <span class="price">205 130,00<!-- {{ minCost }} --> ₽</span>
     </div>
   </ion-item>
 
@@ -90,15 +91,15 @@
     </ion-card-header>
 
     <ion-card-content>
-      <p class="text">
-        {{ companyName }}
+      <p class="text text-main">
+        <!-- {{ companyName }} -->
         Государственное бюджетное общеобразовательное учреждение города Москвы «Школа с углубленным изучением английского языка № 1273»
       </p>
 
       <ion-item class="delivery">
-        <p class="text">
-          <span class="clock-container"><span class="ti-time"></span></span>
-          Срок поставки — {{ maxDays }} дней
+        <p class="text-clock">
+          <span class="clock-container"></span>
+          Срок поставки — <!-- {{ maxDays }} -->10 дней
         </p>
       </ion-item>
 
@@ -115,8 +116,8 @@
 
     <ion-card-content>
 
-      <p class="text">
-        {{ supplyDescription }}
+      <p class="text text-main">
+        <!-- {{ supplyDescription }} -->
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
 
@@ -132,13 +133,13 @@
 
   </ion-card>
   <div class="stop-participating">
-    <a href="" class="link ">Прекратить участие</a>  
+    <a href="" class="link "> <span class="close"></span><span class="text">Прекратить участие</span></a>  
   </div>
   <div>
     <button class="primary-btn" ion-button color="primary" block>Участвовать в аукционе</button>
   </div>
   <div>
-    <button class="primary-btn"  ion-button color="primary" block><span class="ti-reload"></span>Изменить ставку</button>
+    <button class="primary-btn"  ion-button color="primary" block><span class="reload"></span>Изменить ставку</button>
   </div>
   <ion-item class="auc-winner">
     <div class="auc-winner_text">
